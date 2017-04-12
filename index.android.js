@@ -9,9 +9,7 @@ export default class ListApplication extends Component {
 
   render() {
     return (
-      <ScrollView style={styles.wrapper}>
-        <Collection/>
-      </ScrollView>
+      <Collection/>
     );
   }
 }

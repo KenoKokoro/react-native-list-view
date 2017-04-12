@@ -13,7 +13,6 @@ export default class Collection extends Component {
 
   async componentWillMount() {
     let posts = await this.getFromStorage('posts');
-    console.log('posts are here');
     if (posts) {
       this.setState({posts: this.ds.cloneWithRows(posts)});
       return;
@@ -60,7 +59,6 @@ export default class Collection extends Component {
 
   fetchPosts() {
     $http.get('https://jsonplaceholder.typicode.com/posts/').then(json => {
-      console.log('touching api');
       AsyncStorage.setItem('posts', JSON.stringify(json));
 
       this.setState({
